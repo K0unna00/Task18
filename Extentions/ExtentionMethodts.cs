@@ -24,25 +24,20 @@ namespace Extentions
         }
         public static string Capilatize(this string str)
         {
-            int count = 0;
-            str = str.Trim();
-            StringBuilder strB = new StringBuilder();
-            foreach (var item in str)
+            StringBuilder strB = new StringBuilder("");
+            strB.Append(char.ToUpper(str[0]));
+            for (int i = 1; i < str.Length; i++)
             {
-                if (item == ' ') count++;
-            }
-            string[] str2 = str.Split(" ", count + 1);
-            for (int i = 0; i < str2.Length; i++)
-            {
-                strB.Append(char.ToUpper(str2[i][0]));
-                for (int j = 1; j < str2[i].Length; j++)
+                if (str[i - 1] == ' ')
                 {
-                    strB.Append(str2[i][j]);
+                    strB.Append(char.ToUpper(str[i]));
                 }
-                strB.Append(" ");
-
+                else
+                {
+                    strB.Append(str[i]);
+                }
             }
-            return strB.ToString().Trim();
+            return strB.ToString();
         }
         public static int[] GetValueIndexes(this string str, char ch)
         {
@@ -99,7 +94,7 @@ namespace Extentions
             }
             return false;
         }
-
+        
     }
 
 }

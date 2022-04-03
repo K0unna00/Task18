@@ -10,7 +10,7 @@ namespace Task18
         {
             Console.WriteLine("\n=============Tasks1==============\n");
             int testNum1 = 33;
-            string testStr = " salam 1 sagol";
+            string testStr = "    salam 1 sagol";
             Console.WriteLine(testNum1.IsOdd());
             Console.WriteLine(testNum1.IsEven());
             Console.WriteLine(testStr.IsContainsDigit());
